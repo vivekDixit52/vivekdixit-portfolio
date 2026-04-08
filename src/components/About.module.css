@@ -1,0 +1,74 @@
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  background: var(--bg2);
+  position: relative;
+  overflow: hidden;
+}
+.about::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99,102,241,0.4), transparent);
+}
+.about::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139,92,246,0.4), transparent);
+}
+
+.left { display: flex; justify-content: center; }
+.imgWrap { position: relative; display: inline-block; }
+
+.badge1, .badge2 {
+  position: absolute;
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.6rem 1rem;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.78rem;
+  backdrop-filter: blur(10px);
+  animation: float 4s ease-in-out infinite;
+  box-shadow: 0 8px 32px rgba(99,102,241,0.15);
+}
+.badge1 { bottom: 20px; left: -30px; animation-delay: 0s; }
+.badge2 { top: 30px; right: -30px; animation-delay: 1.5s; }
+.badge1 strong, .badge2 strong { display: block; color: white; font-size: 0.82rem; }
+.badge1 span:first-child, .badge2 span:first-child { font-size: 1.2rem; }
+.badge1 > div span, .badge2 > div span { color: var(--muted); }
+
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+
+.para {
+  color: var(--muted); font-weight: 300; margin-bottom: 1rem;
+  font-size: 1rem; line-height: 1.8;
+}
+.para strong { color: var(--purple-light); font-weight: 500; }
+
+.traits {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+.trait {
+  display: flex; align-items: center; gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  background: rgba(99,102,241,0.07);
+  border: 1px solid rgba(99,102,241,0.15);
+  border-radius: 40px;
+  font-size: 0.82rem; color: #a5b4fc;
+  transition: background 0.2s, border-color 0.2s;
+}
+.trait:hover {
+  background: rgba(99,102,241,0.14);
+  border-color: rgba(99,102,241,0.35);
+}
+
+.actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+
+@media (max-width: 900px) {
+  .about { grid-template-columns: 1fr; gap: 3rem; }
+  .left { order: -1; }
+  .badge1 { left: 0; }
+  .badge2 { right: 0; }
+}

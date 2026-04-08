@@ -1,0 +1,36 @@
+.footer {
+  background: var(--bg);
+  padding: 3rem 6vw 2rem;
+  border-top: 1px solid var(--border);
+}
+.top {
+  display: flex; align-items: center; gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.logo {
+  font-size: 1.3rem; font-weight: 900;
+  color: white; letter-spacing: -0.02em;
+}
+.angle {
+  color: #8b5cf6;
+  font-family: 'Fira Code', monospace;
+  font-size: 1.1rem;
+}
+.tagline { color: var(--muted); font-size: 0.88rem; font-weight: 300; }
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99,102,241,0.3), transparent);
+  margin-bottom: 1.5rem;
+}
+.bottom {
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+}
+.copy { font-size: 0.82rem; color: var(--muted); }
+.navLinks { display: flex; gap: 1.8rem; }
+.navLink {
+  font-size: 0.82rem; color: var(--muted);
+  text-decoration: none; transition: color 0.2s;
+}
+.navLink:hover { color: var(--purple-light); }
